@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo "Checking out source code"
+                sh 'ls -l'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Building Docker image"
+                sh 'docker build -t multistage-demo:1.0 .'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Running container for testing"
+                sh 'docker run --rm multistage-demo:1.0'
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                echo "Cleaning up Docker images"
+                sh 'docker rmi multistage-demo:1.0 || true'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Pipeline executed successfully"
+        }
+        failure {
+            echo "Pipeline failed"
+        }
+    }
+}
+
