@@ -1,11 +1,3 @@
-Got you 👍
-Here is a **clean, copy-paste ready `README.md`** you can put at the **repo root** or inside `multibranch-demo/`.
-It explains **how to create and trigger a Jenkins Multibranch Pipeline**, step by step, in simple DevOps language.
-
-You can directly use this in your GitHub repo.
-
----
-
 ```md
 # Jenkins Multibranch Pipeline – Hands-on Guide
 
