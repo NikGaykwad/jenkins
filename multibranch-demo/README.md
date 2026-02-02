@@ -150,8 +150,6 @@ git commit --allow-empty -m "Trigger build"
 git push origin main
 ```
 
----
-
 ## Jenkins Multibranch Behavior
 
 * Each branch has its own pipeline
@@ -159,4 +157,3 @@ git push origin main
 * Build history is maintained per branch
 * Failures in feature branch do not affect main branch
 
----
